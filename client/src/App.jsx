@@ -8,7 +8,7 @@ import Register from "./pages/Register";
 
 function App() {
   return (
-    <div className="bg-black h-screen">
+    <div className="bg-black min-h-screen">
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />} path="/">
