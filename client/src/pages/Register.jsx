@@ -1,11 +1,12 @@
-import { RxCross2 } from "react-icons/rx";
-import Avatar from "react-avatar";
 import { Upload } from "lucide-react";
-import { useForm } from "react-hook-form";
-import { useRegisterUserMutation } from "../features/auth/authApi";
-import { useDispatch } from "react-redux";
-import { userLoggedIn } from "../features/auth/authSlice";
 import { useEffect, useState } from "react";
+import Avatar from "react-avatar";
+import { useForm } from "react-hook-form";
+import { RxCross2 } from "react-icons/rx";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useRegisterUserMutation } from "../features/auth/authApi";
+import { userLoggedIn } from "../features/auth/authSlice";
 
 const Register = () => {
   // 01a. Setting up react-hook-form
@@ -18,6 +19,8 @@ const Register = () => {
 
   // 01b. Variable to store Image src Url in the preview variable (Avatar-Image).
   const [preview, setPreview] = useState(null);
+  // 01c. To navigate user after register.
+  const navigate = useNavigate();
 
   // 02. Form submit handler.
   const onSubmit = async (data) => {
@@ -41,6 +44,7 @@ const Register = () => {
           accessToken: registerData?.meta?.accessToken,
         })
       );
+      navigate("/verify-email");
     } catch (error) {}
   };
 
