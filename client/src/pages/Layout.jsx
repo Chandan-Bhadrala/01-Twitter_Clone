@@ -20,7 +20,3 @@ const Layout = () => {
 };
 
 export default Layout;
-
-//  <div className="basis-[30%] sticky top-0 self-start pb-8">
-//         <RightSidebar />
-//       </div>
