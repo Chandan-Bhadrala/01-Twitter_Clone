@@ -54,8 +54,8 @@ const VerifyEmail = () => {
   }, [verifiedUserData, dispatch, navigate]);
 
   return (
-    <main className="flex bg-black justify-center items-center min-h-screen ">
-      <div className="text-center bg-gray-700/70 backdrop-blur-md w-full max-w-md p-4 rounded-lg ">
+    <main className="flex bg-gray-800  justify-center items-center min-h-screen ">
+      <div className="text-center bg-black backdrop-blur-md w-full max-w-lg p-4 rounded-lg ">
         {/* Envelope Icon */}
         <div className="flex justify-center mb-4 mt-2">
           <div className="flex justify-center bg-gray-500 p-4 rounded-full w-fit">
@@ -94,7 +94,7 @@ const VerifyEmail = () => {
         <button
           onClick={handleVerifyEmail}
           disabled={registerIsLoading}
-          className="cursor-pointer text-[#f2ebeb] bg-gray-500 w-full rounded-lg p-2"
+          className="cursor-pointer text-[#f2ebeb] bg-gray-500 w-full rounded-lg p-2 "
         >
           {registerIsLoading ? "Verifying..." : "Verify Email"}
         </button>
@@ -108,7 +108,7 @@ const VerifyEmail = () => {
         </p>
 
         <Link
-          to="/"
+          to="/login"
           className="cursor-pointer mt-2 p-2 w-full rounded-lg hover:bg-gray-500/20 text-gray-400 flex gap-x-4 justify-center"
         >
           <ArrowLeft /> Back to login

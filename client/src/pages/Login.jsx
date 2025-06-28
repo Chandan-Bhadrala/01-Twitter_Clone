@@ -1,4 +1,5 @@
 import { RxCross2 } from "react-icons/rx";
+import { Link } from "react-router-dom";
 const Login = () => {
   return (
     <main className="text-white flex justify-center items-center bg-gray-800 h-screen flex-col relative">
@@ -21,7 +22,7 @@ const Login = () => {
 
         {/* Row 2 - starts*/}
         <div className="mx-20 mt-8 ">
-          <div className="text-4xl font-bold mr-32">Create your account</div>
+          <div className="text-4xl font-bold mr-32">Login to your account</div>
 
           <div className="mt-8">
             <input
@@ -38,9 +39,20 @@ const Login = () => {
             />
           </div>
           <div className="my-8 ">
-            <button className="w-full bg-gray-500 rounded-4xl py-4 text-black text-2xl font-semibold">
+            <button className="w-full bg-gray-500 rounded-4xl py-4 text-black text-2xl font-semibold cursor-pointer">
               Login
             </button>
+          </div>
+        </div>
+        <div className="mb-2 text-2xl flex justify-center">
+          <div>
+            Don't have an account?{" "}
+            <Link
+              to="/register"
+              className=" cursor-pointer transition-all hover:underline hover:font-bold"
+            >
+              Create an account
+            </Link>
           </div>
         </div>
         {/* Row 2 - ends */}

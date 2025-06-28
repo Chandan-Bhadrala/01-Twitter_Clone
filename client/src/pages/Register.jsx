@@ -4,7 +4,7 @@ import Avatar from "react-avatar";
 import { useForm } from "react-hook-form";
 import { RxCross2 } from "react-icons/rx";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useRegisterUserMutation } from "../features/auth/authApi";
 import { userLoggedIn } from "../features/auth/authSlice";
 
@@ -154,6 +154,18 @@ const Register = () => {
               </button>
             </div>
           </form>
+        </div>
+
+        <div className="mb-4 text-2xl flex justify-center">
+          <div>
+            Already have an account?{" "}
+            <Link
+              to="/register"
+              className=" cursor-pointer transition-all hover:underline hover:font-bold"
+            >
+          Login
+            </Link>
+          </div>
         </div>
         {/* Row 2 - ends */}
       </main>
