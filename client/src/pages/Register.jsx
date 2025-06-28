@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { useRegisterUserMutation } from "../features/auth/authApi";
 import { userLoggedIn } from "../features/auth/authSlice";
+import { Loader2 } from "lucide-react";
 
 const Register = () => {
   // 01a. Setting up react-hook-form
@@ -149,8 +150,16 @@ const Register = () => {
               <button
                 className="w-full bg-gray-500 rounded-4xl py-4 text-black text-2xl font-semibold cursor-pointer"
                 type="submit"
+                disabled={registerIsLoading}
               >
-                Register
+                {registerIsLoading ? (
+                  <div className="flex justify-center items-center">
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    <div className="self-center">Please wait</div>
+                  </div>
+                ) : (
+                  "Register"
+                )}
               </button>
             </div>
           </form>
@@ -161,9 +170,9 @@ const Register = () => {
             Already have an account?{" "}
             <Link
               to="/register"
-              className=" cursor-pointer transition-all hover:underline hover:font-bold"
+              className="cursor-pointer transition-all hover:underline hover:font-bold"
             >
-          Login
+              Login
             </Link>
           </div>
         </div>
