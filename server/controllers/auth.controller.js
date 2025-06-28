@@ -15,7 +15,7 @@ import {
 // 01. Register Controller.
 export const register = asyncHandler(async (req, res) => {
   // 00a. Extract info from the req body.
-  const { fullName, username, email, password, confirmPassword } = req.body;
+  const { fullName, username, email, password } = req.body;
   const avatarFile = req.file;
 
   // console.log(req.file); // Information about the uploaded file
@@ -33,13 +33,6 @@ export const register = asyncHandler(async (req, res) => {
     });
   }
 
-  // 00c. Password must be same as confirmPassword.
-  if (password !== confirmPassword) {
-    return sendError(res, {
-      statusCode: 400,
-      message: "Password & Confirm Password must be same",
-    });
-  }
   try {
     const usernameAvailabilityVerification = await User.findOne({
       username,
